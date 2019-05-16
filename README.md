@@ -2,6 +2,7 @@
 
 ## Git
 
+- [Delete local Git branches after deleting them on the remote repo](https://stackoverflow.com/questions/17983068/delete-local-git-branches-after-deleting-them-on-the-remote-repo)
 - [Syncing a fork](https://help.github.com/articles/syncing-a-fork/)
 
 ### Add Git repo from local to an online service
