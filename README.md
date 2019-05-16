@@ -1,5 +1,9 @@
 # rmbr
 
+## Browser
+
+- [Bubbling and capturing](https://javascript.info/bubbling-and-capturing)
+
 ## Git
 
 - [Delete local Git branches after deleting them on the remote repo](https://stackoverflow.com/questions/17983068/delete-local-git-branches-after-deleting-them-on-the-remote-repo)
