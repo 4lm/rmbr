@@ -31,3 +31,19 @@ but you don't want to fork it, but yout want keep the Git history
 ```bash
 pip freeze | xargs pip uninstall -y
 ```
+
+## Convert EOL in all files from CRLF to LF:
+
+[dos2unix](http://dos2unix.sourceforge.net/) has to be installed for this!
+
+- Basic usage:
+
+```bash
+find . -type f | xargs dos2unix
+```
+
+- Advanced usage (ingore some paths):
+
+```bash
+find . -type f ! -path "./venv/*" ! -path "./.git/*" ! -path "./node_modules/*" | xargs dos2unix
+```
