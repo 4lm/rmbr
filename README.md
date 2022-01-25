@@ -22,6 +22,16 @@ but you don't want to fork it, but yout want keep the Git history
 
 \*Use `set-url` for cloned Git repos
 
+### Add an existing Git repo to GitHub
+
+```sh
+cd <path-to>/<git-repo>
+git remote remove origin
+gh repo create <user-or-org-name>/<repo-name> -y --private
+git remote set-url origin git@github.com:<user-or-org-name>/<repo-name>.git
+git push
+```
+
 ## Shell
 
 - [Writing to a file from the shell](https://ubuntuforums.org/showthread.php?t=1623835&s=6d8ff5a066c767992033be9ed7913ba1&p=10127051#post10127051)
