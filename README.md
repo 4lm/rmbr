@@ -63,3 +63,52 @@ find . -type f ! -path "./venv/*" ! -path "./.git/*" ! -path "./node_modules/*" 
 ```bash
 find . -type f ! -path "./.git/*" -exec chmod 644 {} \;
 ```
+
+# How to list all locally linked npm packages?
+
+To view a list of all locally linked npm packages, you can use the following approaches:
+
+## 1. Check Global `node_modules` Directory
+
+Linked packages are stored in the global `node_modules` directory. You can list them by navigating to this directory and listing its contents.
+
+### For npm:
+
+#### 1.1 Find the Global `node_modules` Directory
+
+Run:
+
+```bash
+npm root -g
+```
+
+This command will show you the path to the global `node_modules` directory.
+
+#### 1.2. List the Contents:
+
+Navigate to the directory provided by the previous command and list its contents. In most systems, you can do this with:
+
+```bash
+ls `npm root -g`
+```
+
+### For Windows Users:
+
+If you're on Windows, use the equivalent command in Command Prompt or PowerShell to list the contents of the directory.
+
+## 2. Use `npm ls -g --depth=0 --link=true`
+
+You can also use an npm command to list globally linked packages.
+
+Run:
+
+```bash
+npm ls -g --depth=0 --link=true
+```
+
+This command lists all globally installed packages and highlights which ones are linked. The `--depth=0` option limits the output to top-level packages, making it easier to see just the linked ones.
+
+## Note:
+
+- Locally linked packages are essentially global packages that are symlinked into your project. That's why you look at the global `node_modules` directory to find them.
+- Remember that the appearance and location of the global `node_modules` directory can vary based on your operating system and npm configuration.
